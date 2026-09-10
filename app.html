@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher App | 試作品デモ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .app-card {
+            background-color: #1c1c1e;
+            padding: 30px 20px;
+            border-radius: 16px;
+            max-width: 500px;
+            margin: 40px auto;
+            text-align: left;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        h1 { font-size: 2rem; color: #f5f5f7; margin-bottom: 5px; }
+        .subtitle { color: #86868b; font-size: 0.95rem; margin-bottom: 25px; }
+        .input-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        label { font-size: 0.85rem; color: #86868b; font-weight: 600; text-transform: uppercase; }
+        input, select {
+            background-color: #2c2c2e;
+            border: 1px solid #444;
+            color: #ffffff;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        input:focus, select:focus { outline: none; border-color: #0071e3; }
+        .result-box {
+            background-color: #2c2c2e;
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid #0071e3;
+            font-family: monospace;
+            font-size: 1.2rem;
+            word-break: break-all;
+            color: #ffffff;
+            min-height: 28px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <h1>CIPHER APP DEMO</h1>
+    <p class="subtitle">Next-Gen Developer / 作品第1号プロトタイプ</p>
+
+    <div class="app-card">
+        <div class="input-group">
+            <label>1. 暗号化したい英文を入力</label>
+            <input type="text" id="inputText" value="Hello World Apple Google">
+        </div>
+        
+        <div class="input-group">
+            <label>2. 鍵（Key）の数字を選択</label>
+            <select id="secretKey">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="4" selected>4</option>
+                <option value="7">7</option>
+                <option value="13">13</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <label>3. リアルタイム暗号化結果</label>
+            <div class="result-box" id="outputResult"></div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">&larr; ポートフォリオ（元のページ）に戻る</a>
+
+<script>
+    const inputText = document.getElementById('inputText');
+    const secretKey = document.getElementById('secretKey');
+    const outputResult = document.getElementById('outputResult');
+
+    function runCipher() {
+        const text = inputText.value;
+        const key = parseInt(secretKey.value, 10);
+        let result = "";
+        for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+            if (/[a-zA-Z]/.test(char)) {
+                const code = text.charCodeAt(i);
+                const shift = (code >= 65 && code <= 90) ? 65 : 97;
+                result += String.fromCharCode(((code - shift + key) % 26) + shift);
+            } else {
+                result += char;
+            }
+        }
+        outputResult.innerText = result;
+    }
+    inputText.addEventListener('input', runCipher);
+    secretKey.addEventListener('change', runCipher);
+    runCipher();
+</script>
+
+</body>
+</html>
