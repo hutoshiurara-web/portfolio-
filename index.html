@@ -23,11 +23,11 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
         .tag {
             font-size: 0.9rem;
@@ -37,24 +37,25 @@
             font-weight: 600;
         }
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 700;
             margin: 10px 0 20px;
             letter-spacing: -0.5px;
         }
         .bio {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-sub);
             max-width: 600px;
             margin: 0 auto;
         }
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
             border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-top: 50px;
+            padding-bottom: 8px;
+            margin-top: 45px;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
         .card {
             background-color: var(--card-bg);
@@ -64,25 +65,45 @@
         }
         .card h3 {
             margin-top: 0;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
             color: var(--text-main);
         }
         .card p {
             color: var(--text-sub);
-            margin-bottom: 0;
+            margin: 0 0 16px 0;
+            font-size: 0.95rem;
         }
         ul {
             padding-left: 20px;
+            margin: 0;
             color: var(--text-sub);
         }
         li {
             margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        /* アプリページへ飛ぶためのかっこいいApple風ボタン */
+        .btn-link {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        .btn-link:hover {
+            background-color: #0077ed;
         }
         footer {
             text-align: center;
-            margin-top: 80px;
+            margin-top: 60px;
             color: var(--text-sub);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -94,16 +115,26 @@
         <h1>Next-Gen Developer</h1>
         <p class="bio">
             将来、AppleやGoogleのグローバルチームで世界を動かすソフトウェアを開発することを目指す、現在中学3年生のエンジニアです。
-            Pythonによるデータ自動化（スクレイピング）やAI連携システムを中心に、最先端のコンピュータサイエンスを猛勉強中。
+            Pythonによるデータ自動化やAI連携システムを中心に、最先端のコンピュータサイエンスを猛勉強中。
         </p>
     </header>
+
+    <!-- 🌟 ここに新しく別ページのアプリへ飛ばすかっこいい動くボタンを設置しました！ 🌟 -->
+    <div class="section-title">MY PROJECTS & PROTOTYPES</div>
+    <div class="card">
+        <h3>作品第1号：シーザー暗号（Caesar Cipher）リアルタイム開発ツール</h3>
+        <p>
+            Pythonのアルゴリズム（関数の定義・条件分岐・ループ）の基礎を応用し、Webブラウザ上で打ち込んだ文字をリアルタイムに暗号化・復号する実機アプリを開発しました。
+        </p>
+        <a href="app.html" class="btn-link">実際のアプリ体験版を動かす &rarr;</a>
+    </div>
 
     <div class="section-title">MISSION & VISION</div>
     <div class="card">
         <h3>組織と個人の成長を、テクノロジーの力で自動化・最適化する</h3>
         <p>
             単にコードを書くのではなく、「現場の業務がどう効率化されるか」「ユーザーにどんな新しい体験を届けられるか」を意識した開発を行います。
-            会社からのバックアップを目標に、高校生のうちから企業向けの実践的なDX自動化ツールを提供していきます。
+            （株）MTKデザインのバックアップによる強固な法務・税務の土台のもと、高校生のうちから企業向けの実践的なDX自動化ツールを提供していきます。
         </p>
     </div>
 
@@ -113,7 +144,7 @@
         <ul>
             <li><strong>Programming:</strong> Python (Requests, BeautifulSoupによるWebスクレイピング、AI連携)</li>
             <li><strong>Web Development:</strong> HTML5 / CSS3 / JavaScriptの基本</li>
-            <li><strong>Tools & Platforms:</strong> GitHub, Google Colaboratory</li>
+            <li><strong>Tools & Platforms:</strong> GitHub, Google Colaboratory, Online IDE</li>
         </ul>
     </div>
 
