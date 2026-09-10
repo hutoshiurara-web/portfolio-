@@ -3,42 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオ</title>
+    <title>Portfolio | Future Software Engineer</title>
     <style>
+        :root {
+            --bg-color: #000000;
+            --card-bg: #1c1c1e;
+            --text-main: #f5f5f7;
+            --text-sub: #86868b;
+            --accent: #0071e3;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #000000;
-            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        header {
             text-align: center;
-            padding: 50px 20px;
+            margin-bottom: 60px;
         }
-        h1 { font-size: 2.5rem; color: #f5f5f7; margin-bottom: 10px; }
-        p { font-size: 1.2rem; color: #86868b; max-width: 600px; margin: 0 auto 30px; }
-        .spec {
-            background-color: #1c1c1e;
-            padding: 20px;
-            border-radius: 12px;
-            display: inline-block;
-            text-align: left;
-            margin-top: 20px;
+        .tag {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
         }
-        .spec h2 { font-size: 1.2rem; color: #0071e3; margin-top: 0; }
-        .spec ul { list-style: none; padding: 0; margin: 0; }
-        .spec li { margin: 8px 0; color: #e8e8ed; }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 10px 0 20px;
+            letter-spacing: -0.5px;
+        }
+        .bio {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            padding: 24px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+        .card p {
+            color: var(--text-sub);
+            margin-bottom: 0;
+        }
+        ul {
+            padding-left: 20px;
+            color: var(--text-sub);
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Hello World!</h1>
-    <p>将来、AppleやGoogleで世界を動かすソフトウェアを作る高校生エンジニアのポートフォリオサイトです。現在、Pythonを中心に猛勉強中。</p>
+<div class="container">
+    <header>
+        <div class="tag">Future Software Engineer</div>
+        <h1>Next-Gen Developer</h1>
+        <p class="bio">
+            将来、AppleやGoogleのグローバルチームで世界を動かすソフトウェアを開発することを目指す、現在中学3年生のエンジニアです。
+            Pythonによるデータ自動化（スクレイピング）やAI連携システムを中心に、最先端のコンピュータサイエンスを猛勉強中。
+        </p>
+    </header>
 
-    <div class="spec">
-        <h2>最強の開発環境（予定）</h2>
+    <div class="section-title">MISSION & VISION</div>
+    <div class="card">
+        <h3>組織と個人の成長を、テクノロジーの力で自動化・最適化する</h3>
+        <p>
+            単にコードを書くのではなく、「現場の業務がどう効率化されるか」「ユーザーにどんな新しい体験を届けられるか」を意識した開発を行います。
+            （株）MTKデザインのバックアップによる強固な法務・税務の土台のもと、高校生のうちから企業向けの実践的なDX自動化ツールを提供していきます。
+        </p>
+    </div>
+
+    <div class="section-title">CORE SKILLS & TECH STACK</div>
+    <div class="card">
+        <h3>技術スタック（現在習得中）</h3>
         <ul>
-            <li>💻 M5 MacBook Air (RAM 32GB / SSD 512GB)</li>
-            <li>📱 13インチ iPad Pro (1TB Nano-texture)</li>
+            <li><strong>Programming:</strong> Python (Requests, BeautifulSoupによるWebスクレイピング、AI連携)</li>
+            <li><strong>Web Development:</strong> HTML5 / CSS3 / JavaScriptの基本</li>
+            <li><strong>Tools & Platforms:</strong> GitHub, Google Colaboratory</li>
         </ul>
     </div>
+
+    <div class="section-title">HARDWARE SETUP</div>
+    <div class="card">
+        <h3>プロフェッショナルな開発環境</h3>
+        <ul>
+            <li>💻 <strong>MacBook Air:</strong> M5チップ / 32GBユニファイドメモリ / 512GB SSD（大規模AI処理・Xcode対応）</li>
+            <li>📱 <strong>iPad Pro:</strong> 13インチ 1TB Nano-textureガラス搭載（実機アプリケーションの動作検証・UI設計）</li>
+        </ul>
+    </div>
+
+    <footer>
+        &copy; 2026 Future Engineer Portfolio. Inspired by Global Leaders.
+    </footer>
+</div>
 
 </body>
 </html>
